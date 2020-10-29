@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-TowerDefense/[Ll]ibrary/
-TowerDefense/[Tt]emp/
-TowerDefense/[Oo]bj/
-TowerDefense/[Bb]uild/
-TowerDefense/[Bb]uilds/
-TowerDefense/[Ll]ogs/
-TowerDefense/[Mm]emoryCaptures/
+TowerDefense3D/[Ll]ibrary/
+TowerDefense3D/[Tt]emp/
+TowerDefense3D/[Oo]bj/
+TowerDefense3D/[Bb]uild/
+TowerDefense3D/[Bb]uilds/
+TowerDefense3D/[Ll]ogs/
+TowerDefense3D/[Mm]emoryCaptures/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
