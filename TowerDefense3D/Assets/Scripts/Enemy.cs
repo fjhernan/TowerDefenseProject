@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject HealthBar;
+    public GameObject particleEffect;
     public Sprite H2;
     public Sprite H3;
     private GameObject h;
@@ -58,6 +59,8 @@ public class Enemy : MonoBehaviour
     }
 
     private void Death(){
+        GameObject particle = Instantiate(particleEffect, transform.position, Quaternion.identity);
+        Destroy(particle, 1.0f);
         GameObject.FindGameObjectWithTag("Purse").GetComponent<Purse>().EarnCoins(loot);
         GameObject.Find("EnemyManager").GetComponent<EnemyManager>().EnemyDestroyed(index);
         Destroy(gameObject);

@@ -11,7 +11,7 @@ public class EnemyManager : MonoBehaviour
     public float movement = 2.0f;
     private ArrayList enemies = new ArrayList();
     private int currentIndex = 1;
-    void Start()
+    public void StartGame()
     {
         wmComponent = WaypointManager.GetComponent<WaypointManager>();
         SpawnEnemies(wmComponent.waypoints[0], wmComponent.waypoints[currentIndex]);
@@ -40,5 +40,8 @@ public class EnemyManager : MonoBehaviour
     public void EnemyDestroyed(int index)
     {
         enemies.RemoveAt(index);
+        if(enemies.Count == 0){
+            GameObject.Find("GameManager").GetComponent<GameManager>().GameEnds();
+        }
     }
 }

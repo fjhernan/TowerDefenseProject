@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public GameObject Tower;
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +23,10 @@ public class InputManager : MonoBehaviour
                     Purse temp = GameObject.FindGameObjectWithTag("Purse").GetComponent<Purse>();
                     if(temp.GetCoins() >= 5){
                         Debug.Log("Tower Placed");
+                        Vector3 v = new Vector3(hit.transform.position.x, hit.transform.position.y, -0.1f);
+                        GameObject t = Instantiate(Tower, v, Quaternion.identity);
+                        //GameObject t = Instantiate(Tower, tra);
+                        GameObject.Find("TowerManager").GetComponent<TowerManager>().AddTowers(t);
                         bc.GetComponent<TowerPlacement>().UpdateStatus(true);
                         temp.Buying(5);
                     }
