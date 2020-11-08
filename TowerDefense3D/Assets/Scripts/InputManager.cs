@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour
                     Purse temp = GameObject.FindGameObjectWithTag("Purse").GetComponent<Purse>();
                     if(temp.GetCoins() >= 5){
                         Debug.Log("Tower Placed");
-                        Vector3 v = new Vector3(hit.transform.position.x, hit.transform.position.y, -0.1f);
+                        Vector3 v = new Vector3(hit.transform.position.x, hit.transform.position.y, -0.5f);
                         GameObject t = Instantiate(Tower, v, Quaternion.identity);
                         //GameObject t = Instantiate(Tower, tra);
                         GameObject.Find("TowerManager").GetComponent<TowerManager>().AddTowers(t);

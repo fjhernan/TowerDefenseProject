@@ -1198,9 +1198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b47b27dc5c7e949a5320c2b2addc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy_1: {fileID: 7272797204951075045, guid: 10ded9f7b23667346b681290e072a5d1, type: 3}
+  Enemy_1: {fileID: 3849184333546352378, guid: 10ded9f7b23667346b681290e072a5d1, type: 3}
   WaypointManager: {fileID: 320136214}
-  movement: 3.42
+  movement: 1.5
+  spawnAmount: 0
+  ParticleEffect: {fileID: 7047444102209622714, guid: a2ac26c7fd5be004e9a612b80001584c, type: 3}
 --- !u!4 &1444252112
 Transform:
   m_ObjectHideFlags: 0

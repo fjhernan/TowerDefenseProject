@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject StartButton;
     public GameObject RestartButton;
+    public char status = 'f';
     void Start()
     {
         RestartButton.SetActive(false);
@@ -19,11 +20,15 @@ public class GameManager : MonoBehaviour
 
     public void RestartButtonClick(){
         StartButton.SetActive(true);
+        GameObject.Find("EnemyManager").GetComponent<EnemyManager>().Restart();
+        if(status == 'f')
+          GameObject.Find("TowerManager").GetComponent<TowerManager>().RestartDefeat();
         RestartButton.SetActive(false);
     }
 
-    public void GameEnds()
+    public void GameEnds(char st)
     {
+        status = st;
         RestartButton.SetActive(true);
     }
 }

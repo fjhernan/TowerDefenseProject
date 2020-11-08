@@ -6,13 +6,20 @@ public class TowerManager : MonoBehaviour
 {
     private ArrayList towers = new ArrayList();
     
+    public void RestartDefeat(){
+        foreach(GameObject tower in towers){
+            if(tower != null)
+                Destroy(tower);
+        }
+        towers.Clear();
+    }
+    
     public void AddTowers(GameObject tower){
         tower.GetComponent<Tower>().SetIndex(towers.Count - 1);
         towers.Add(tower);
     }
-
+    /*
     public void RemoveTower(int index){
-        towers.RemoveAt(index);
         int i = 0;
         foreach(GameObject tower in towers){
             if(i >= index){
@@ -20,5 +27,7 @@ public class TowerManager : MonoBehaviour
             }
             i++;
         }
-    }
+
+        towers.RemoveAt(index);
+    }*/
 }
